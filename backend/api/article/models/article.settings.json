@@ -36,9 +36,9 @@
       "type": "date",
       "required": true
     },
-    "categories": {
-      "collection": "category",
-      "via": "article"
+    "category": {
+      "model": "category",
+      "via": "articles"
     }
   }
 }

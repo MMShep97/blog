@@ -1,33 +1,34 @@
 <template>
   <div>
 
+    <client-only>
     <div class="uk-section">
       <div class="uk-container uk-container-large">
-        <h1>Strapi blog</h1>
+        <h1>{{ category.name }}</h1>
 
-        <Articles :articles="articles"></Articles>
+        <Articles :articles="category.articles || []"></Articles>
 
       </div>
     </div>
-
+  </client-only>
   </div>
 </template>
 
 <script>
-import articlesQuery from '~/apollo/queries/article/articles'
+import articlesQuery from '~/apollo/queries/article/articles-categories'
 import Articles from '~/components/Articles'
 
 export default {
   data() {
     return {
-      articles: [],
+      category: []
     }
   },
   components: {
     Articles
   },
   apollo: {
-    articles: {
+    category: {
       prefetch: true,
       query: articlesQuery,
       variables () {
