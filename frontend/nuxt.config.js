@@ -1,8 +1,17 @@
+const localhost = "http://localhost:1337"
+
 export default {
   env: {
-    strapiBaseUri: process.env.BACKEND_URL || "http://localhost:1337"
+    strapiBaseUri: process.env.BACKEND_URL || localhost
   },
+
+  // for netlify (https://nuxtjs.org/docs/2.x/deployment/netlify-deployment)
+  generate: {
+    fallback: true
+  },
+
   target: 'static',
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'frontend',
@@ -54,7 +63,7 @@ export default {
   apollo: {  
     clientConfigs: {
       default: {
-        httpEndpoint: process.env.BACKEND_URL + "/graphql" || "http://localhost:1337/graphql"
+        httpEndpoint: (process.env.BACKEND_URL || localhost) + "/graphql"
       }
     }
   },

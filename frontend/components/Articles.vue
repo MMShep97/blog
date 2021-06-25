@@ -46,6 +46,7 @@ export default {
       api_url: process.env.strapiBaseUri
     }
   },
+
   props: {
     articles: Array
   },
@@ -61,4 +62,5 @@ export default {
     }
   }
 }
+
 </script>
