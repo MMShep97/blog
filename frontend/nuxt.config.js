@@ -14,7 +14,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'frontend',
+    title: 'Marc Shepherd - Blog',
     htmlAttrs: {
       lang: 'en'
     },
@@ -53,8 +53,9 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     '@nuxtjs/apollo',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
   ],
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -73,4 +74,7 @@ export default {
     breaks: true,
     injected: true
   },
+  bootstrapVue: {
+    icons: true
+  }
 }

@@ -38,3 +38,9 @@ export default {
   }
 }
 </script>
+
+<style scoped> 
+  #banner {
+    text-align: center;
+  }
+</style>

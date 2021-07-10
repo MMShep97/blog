@@ -4,7 +4,7 @@
     <client-only>
     <div class="uk-section">
       <div class="uk-container uk-container-large">
-        <h1>{{ category.name }}</h1>
+        <h1 id="category-name">{{ category.name }}</h1>
 
         <Articles :articles="category.articles || []"></Articles>
 
@@ -38,3 +38,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  #category-name {
+    text-align: center;
+  }
+</style>
