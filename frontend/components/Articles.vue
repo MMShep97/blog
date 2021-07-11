@@ -6,7 +6,7 @@
           <NuxtLink v-for="article in leftArticles" :to="{ name: 'articles-id', params: {id: article.id} }" class="uk-link-reset" :key="article.id">
             <div class="uk-card uk-card-hover uk-card-default">
                  <div v-if="article.image" class="uk-card-media-top">
-                     <img :src="api_url + article.image.url" alt="" height="100">
+                     <img :src="article.image.url" alt="" height="100">
                  </div>
                  <div class="uk-card-body">
                    <p id="category" v-if="article.category" class="uk-text-uppercase">{{ article.category.name }}</p>
@@ -21,7 +21,7 @@
             <NuxtLink v-for="article in rightArticles" :to="{ name: 'articles-id', params: {id: article.id} }" class="uk-link-reset" :key="article.id">
               <div class="uk-card uk-card-hover uk-card-default">
                    <div v-if="article.image" class="uk-card-media-top">
-                       <img :src="api_url + article.image.url" alt="" height="100">
+                       <img :src="article.image.url" alt="" height="100">
                    </div>
                    <div class="uk-card-body">
                      <p id="category" v-if="article.category" class="uk-text-uppercase">{{ article.category.name }}</p>

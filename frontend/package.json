@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "dev": "nuxt",
+    "generate": "nuxt generate",
+    "start": "nuxt start"
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "@nuxtjs/cloudinary": "^1.0.3",
     "@nuxtjs/markdownit": "^2.0.0",
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
@@ -18,5 +19,7 @@
     "nuxt": "^2.15.3",
     "uikit": "^3.6.22"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "vue-cli-plugin-cloudinary": "~0.0.6"
+  }
 }

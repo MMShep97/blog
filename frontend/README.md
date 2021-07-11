@@ -3,18 +3,19 @@
 ## Build Setup
 
 ```bash
-# install dependencies
+### install dependencies
 $ yarn install
 
-# serve with hot reload at localhost:3000
+### serve with hot reload at localhost:3000
 $ yarn dev
 
-# build for production and launch server
+### build for production and launch server
 $ yarn build
 $ yarn start
 
-# generate static project
+### generate static project
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Remember to generate a `.env` file locally for external services like Cloudinary, etc.
+

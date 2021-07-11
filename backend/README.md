@@ -6,9 +6,12 @@ Hosted [here by Heroku](https://blog-backend-mmshep97.herokuapp.com/)
 
 Auto-deploys when commits are pushed to the main branch.
 
-# Publishing to Heroku
+## Publishing to Heroku
 
-I used [this heroku buildpack] to easily deploy this project from within my monorepo containing both backend & frontend
+I used [this heroku buildpack](https://github.com/lstoll/heroku-buildpack-monorepo.git) to easily deploy this project from within my monorepo containing both backend & frontend
 
-#### Helpful links
+## Helpful links
     - https://medium.com/@shalandy/deploy-git-subdirectory-to-heroku-ea05e95fce1f
+
+## Notes
+Remember to generate a `.env` file locally for external services like Cloudinary, etc.
