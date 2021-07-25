@@ -5,8 +5,17 @@
         <div>
           <NuxtLink v-for="article in leftArticles" :to="{ name: 'articles-id', params: {id: article.id} }" class="uk-link-reset" :key="article.id">
             <div class="uk-card uk-card-hover uk-card-default">
-                 <div v-if="article.image" class="uk-card-media-top">
-                     <img :src="article.image.url" alt="" height="100">
+                 <div v-if="article.image" class="uk-card-media-top uk-overflow-hidden">
+                     
+                  <cld-image
+                  :public-id="article.image.url"
+                  fetchFormat="auto"
+                  quality="auto"
+                  crop="scale"
+                  alt="Buy Me A Coffee"
+                  class="uk-animation-reverse uk-transform-origin-top-right"
+                  uk-scrollspy="cls: uk-animation-kenburns; repeat: true"
+                  />
                  </div>
                  <div class="uk-card-body">
                    <p id="category" v-if="article.category" class="uk-text-uppercase">{{ article.category.name }}</p>
@@ -20,8 +29,16 @@
           <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
             <NuxtLink v-for="article in rightArticles" :to="{ name: 'articles-id', params: {id: article.id} }" class="uk-link-reset" :key="article.id">
               <div class="uk-card uk-card-hover uk-card-default">
-                   <div v-if="article.image" class="uk-card-media-top">
-                       <img :src="article.image.url" alt="" height="100">
+                   <div v-if="article.image" class="uk-card-media-top uk-overflow-hidden">
+                    <cld-image
+                    :public-id="article.image.url"
+                    fetchFormat="auto"
+                    quality="auto"
+                    crop="scale"
+                    alt="Buy Me A Coffee"
+                                      class="uk-animation-reverse uk-transform-origin-top-right"
+                  uk-scrollspy="cls: uk-animation-kenburns; repeat: true"
+                    />
                    </div>
                    <div class="uk-card-body">
                      <p id="category" v-if="article.category" class="uk-text-uppercase">{{ article.category.name }}</p>

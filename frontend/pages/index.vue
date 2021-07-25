@@ -1,11 +1,5 @@
 <template>
   <div class="site-container">
-    <div class="uk-section body-container">
-      <div class="uk-container uk-container-large">
-        <h1 id="category-name" align="center">Welcome!</h1>
-        <Articles :articles="articles"></Articles>
-      </div>
-    </div>
   </div>
 </template>
 
