@@ -55,6 +55,7 @@ export default {
     '@nuxtjs/apollo',
     '@nuxtjs/markdownit',
     '@nuxtjs/cloudinary',
+    '@nuxtjs/vuetify',
   ],
 
 
