@@ -1,40 +1,44 @@
 <template>
   <div>
-    <nuxt />
+    <v-app dark>
+      <the-navbar />
+      <v-main>
+        <nuxt />
+      </v-main>
+    </v-app>
   </div>
 </template>
 
 <script>
-import articlesQuery from '~/apollo/queries/article/articles'
-import categoriesQuery from '~/apollo/queries/category/categories'
 import TheNavbar from '../components/TheNavbar.vue'
 
 export default {
   components: { TheNavbar },
   data() {
     return {
-      categories: [],
     }
   },
-  apollo: {
-    categories: {
-      prefetch: true,
-      query: categoriesQuery
-    },
-    articles: {
-      prefetch: true,
-      query: articlesQuery,
-      variables() {
-        return { id: parseInt(this.$route.params.id) }
-      }
-    }
-  }
 }
 
 </script>
 
 <style>
-body {
-  background: #1D3557;
+.theme--dark.v-application {
+  background-color: var(--v-background-base, --v-background-base) !important;
+}
+
+.nav-number-color {
+  color: #E63946;
+}
+
+.nav-logo-wrapper {
+  width: 100px;
+  height: 100%;
+}
+
+.nav-logo {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 </style>

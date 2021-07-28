@@ -32,11 +32,4 @@ export default {
 </style>
 
 <style>
-  body {
-    background-color:rgb(250, 243, 233);
-  }
-
-  html {
-    background-color:rgb(250, 243, 233);
-  }
 </style>

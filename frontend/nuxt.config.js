@@ -84,5 +84,9 @@ export default {
     apiKey: process.env.CLOUDINARY_KEY,
     apiSecret: process.env.CLOUDINARY_SECRET,
     useComponent: true
+  },
+    vuetify: {
+    optionsPath: './vuetify.options.js'
   }
 }
+
