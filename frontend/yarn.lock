@@ -1419,6 +1419,16 @@
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.2.0.tgz#f3933a44e365864f4dad5db94158106d511e8131"
   integrity sha512-sqKVVVOe5ivCaXDWivIJYVSaEgdQK9ul7a4Kity5Iw7u9+wBAPbX1RMSnLLmp7O4Vzj0WOWwMAJsTL00xwaNug==
 
+"@iconify/icons-fontisto@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-fontisto/-/icons-fontisto-1.1.0.tgz#1f17c890256788ad27e55568cba40a72fbde6e12"
+  integrity sha512-yGoo8ZZf/LefU30TRs6rZxtCq+6Bk0RlndJDZGvpw5YCvMRRgivwbcDMRBQMjwHBL9NsXQdqCxpX30igmQRBAQ==
+
+"@iconify/vue2@^1.0.0-beta.1":
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@iconify/vue2/-/vue2-1.0.0-beta.1.tgz#4f71fef328efcfa40ab05bdb03e17355ac0dd265"
+  integrity sha512-R1R8OCM1cvfV38WAr1vAaN7kiFgHRGcpCmPoln2P0tibmrpwSLoGW5rk3nQcQBqYZD/XSEN2dQBHQzTmkyuf+g==
+
 "@josephg/resolvable@^1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@josephg/resolvable/-/resolvable-1.0.1.tgz#69bc4db754d79e1a2f17a650d3466e038d94a5eb"

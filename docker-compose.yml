@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+  backend:
+    image: node:10
+    container_name: backend
+    restart: unless-stopped
+    entrypoint: "/bin/bash"
+    command: "-c \"if [ ! -d \"node_modules\" ]; then npm i; fi; npm run dev\""
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+    #    links:
+    #      - postgres:postgres
+    networks:
+      - strapi-app-network
+    volumes:
+      - ./app:/srv/app
+    ports:
+      - "1337:1337"
+
+  postgresdb:
+    image: postgres
+    container_name: postgres-db
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      POSTGRES_INITDB_ROOT_USERNAME: ${POSTGRES_INITDB_ROOT_USERNAME}
+      POSTGRES_INITDB_ROOT_PASSWORD: ${POSTGRES_INITDB_ROOT_PASSWORD}
+    networks:
+      - strapi-app-network
+    volumes:
+      - strapidata:/data/db
+    ports:
+      - "27017:27017"
+
+  frontend:
+    image: node:10
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/srv/app
+    restart: always
+    # working_dir: /usr/local/app
+    entrypoint: "/bin/bash"
+    command: "-c \"if [ ! -d \"node_modules\" ]; then npm i; fi; npm run dev\""
+
+networks:
+  strapi-app-network:
+    driver: bridge
+
+volumes:
+  strapidata:

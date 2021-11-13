@@ -3,6 +3,7 @@
     <v-app dark>
       <the-navbar />
       <v-main>
+        <the-contact-info />
         <nuxt />
       </v-main>
     </v-app>
@@ -10,10 +11,7 @@
 </template>
 
 <script>
-import TheNavbar from '../components/TheNavbar.vue'
-
 export default {
-  components: { TheNavbar },
   data() {
     return {
     }
@@ -24,7 +22,7 @@ export default {
 
 <style>
 .theme--dark.v-application {
-  background-color: var(--v-background-base, --v-background-base) !important;
+  background-color: var(--v-background-base, rgb(36, 36, 177)) !important;
 }
 
 .nav-number-color {

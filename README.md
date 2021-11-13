@@ -5,3 +5,6 @@
 Collecting my thoughts... sharing what I learn in my career
 
 Click [here](https://marc-shepherd.netlify.app/) to navigate to the site!
+
+Notes.
+1. Nav to mobile nav only works if it starts out mobile...

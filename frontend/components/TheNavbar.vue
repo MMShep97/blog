@@ -5,10 +5,11 @@
               <v-icon class="nav-logo">$saffron</v-icon>
             </div>
              <v-spacer></v-spacer>
-             <span v-if="$vuetify.breakpoint.mobile">
-                 <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-             </span>
-             <span v-else class="d-flex flex-row">
+             <div v-show="$vuetify.breakpoint.mobile">
+                 <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+             </div>
+             <div v-show="!$vuetify.breakpoint.mobile">
+                 <div class="d-flex flex-row">
                 <div class="mr-6">
                 <span class="nav-number-color">1. </span>
                 <span>About</span>
@@ -25,7 +26,8 @@
                 <span class="nav-number-color">4. </span>
                 <span>Contact</span>
                 </div>
-            </span>
+                </div>
+            </div>
           </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary color="var(--v-background-base)">
             <v-container class="nav-drawer-content">
@@ -61,7 +63,7 @@
 export default {
     data() {
         return {
-            drawer: false
+            drawer: null
         }
     },
 }
