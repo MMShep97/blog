@@ -1,10 +1,10 @@
-FROM strapi/base
+# FROM strapi/base
+FROM strapi/base:alpine
 
 WORKDIR /app
 
 COPY ["package.json", "package-lock.json*", "./"]
 
-RUN ls -al
 RUN npm install
 
 COPY . .

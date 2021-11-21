@@ -63,6 +63,14 @@ export default {
   build: {
   },
 
+  // enable HMR so it will work in docker
+  watchers: {
+    webpack: {
+      aggregateTimeout: 300,
+      poll: 1000,
+    }
+  },
+
   apollo: {  
     clientConfigs: {
       default: {

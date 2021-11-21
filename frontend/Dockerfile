@@ -1,6 +1,6 @@
-FROM node:14
+FROM node:14-alpine
 
-WORKDIR /app/frontend
+WORKDIR /app
 
 COPY ["package.json", "package-lock.json*", "./"]
 
@@ -9,3 +9,6 @@ RUN npm install
 COPY . .
 
 CMD [ "npm", "run", "dev" ]
+
+# RUN npm run build
+# CMD [ "npm", "run", "start" ]
