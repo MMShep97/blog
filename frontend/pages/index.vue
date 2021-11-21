@@ -3,7 +3,7 @@
       <v-row class="fill-height px-10">
         <v-col cols="6">
           <div class="header-content">
-            <h2 class="name">Marc Shepherdd</h2>
+            <h2 class="name">Marc Shepherd</h2>
             <div>
               <h3 class="title">Software Engineer</h3>
             </div>
