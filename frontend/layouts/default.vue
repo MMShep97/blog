@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <v-app dark>
-      <the-navbar />
-      <v-main>
+    <v-app dark color="background">
+        <the-navbar />
         <the-contact-info />
-        <nuxt />
-      </v-main>
+        <v-container fluid>
+          <v-main>
+            <nuxt />
+          </v-main>
+        </v-container>
     </v-app>
-  </div>
 </template>
 
 <script>
@@ -21,8 +21,8 @@ export default {
 </script>
 
 <style>
-.theme--dark.v-application {
-  background-color: var(--v-background-base, rgb(36, 36, 177)) !important;
+.v-application {
+  background-color: var(--v-background-base) !important;
 }
 
 .nav-number-color {
@@ -38,5 +38,12 @@ export default {
   position: absolute;
   height: 100%;
   width: 100%;
+}
+
+.primary-text-style {
+}
+
+.secondary-text-style {
+  font-family: 'Poppins' !important;
 }
 </style>

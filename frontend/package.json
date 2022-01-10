@@ -9,8 +9,6 @@
     "start": "nuxt start"
   },
   "dependencies": {
-    "@iconify/icons-fontisto": "^1.1.0",
-    "@iconify/vue2": "^1.0.0-beta.1",
     "@nuxtjs/apollo": "^4.0.1-rc.5",
     "@nuxtjs/cloudinary": "^1.0.3",
     "@nuxtjs/markdownit": "^2.0.0",
@@ -22,6 +20,8 @@
     "uikit": "^3.6.22"
   },
   "devDependencies": {
+    "@iconify/icons-fontisto": "^1.1.0",
+    "@iconify/vue2": "^1.1.1",
     "@nuxtjs/vuetify": "^1.12.1",
     "vue-cli-plugin-cloudinary": "~0.0.6"
   }

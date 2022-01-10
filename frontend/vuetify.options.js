@@ -1,4 +1,7 @@
-import Saffron from '@/components/Saffron'
+import Saffron from '@/components/svg/Saffron'
+import LinkedIn from '@/components/svg/LinkedIn'
+import StackOverflow from '@/components/svg/StackOverflow'
+import GitHub from '@/components/svg/GitHub'
 
 export default function () {
     return {
@@ -6,7 +9,16 @@ export default function () {
             values: {
                 saffron: {
                     component: Saffron
-                }
+                },
+                linkedin: {
+                    component: LinkedIn
+                },
+                stackoverflow: {
+                    component: StackOverflow
+                },
+                github: {
+                    component: GitHub
+                },
             }
         },
         theme: {
@@ -15,19 +27,16 @@ export default function () {
             },
             dark: true,
             themes: {
-            dark: {
-                accent: {
-                test: 'E63946'
-                },
-                background: '1D3557',
-                cardBackground: '192D4A',
-                primaryAccent: 'E63946',
-                lightAccent: 'A8DADC',
-                mediumLightAccent: '457B9D',
-                darkAccent: '192D4A',
-                primaryText: 'F1FAEE',
-                secondaryText: 'A8B2D1',
-            }
+                dark: {
+                    primary: 'F1FAEE',
+                    secondary: 'A8B2D1',
+                    tertiary: 'A8DADC', // formally light accent
+                    lightMediumAccent: '457B9D',
+                    darkAccent: '192D4A',
+                    background: '1D3557',
+                    cardBackground: '192D4A',
+                    primaryAccent: 'E63946',
+                }
             },
         },
         customVariables: ['~/assets/variables.scss'],

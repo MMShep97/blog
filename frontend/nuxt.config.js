@@ -94,7 +94,7 @@ export default {
     useComponent: true
   },
     vuetify: {
-    optionsPath: './vuetify.options.js'
+      optionsPath: './vuetify.options.js'
   }
 }
 
