@@ -5,8 +5,10 @@ services:
     build: ./backend
     container_name: backend
     restart: unless-stopped
-    env_file: ./backend/.env # injected into container from specified .env file
-    environment: # injected from root .env file
+    environment:
+      CLOUDINARY_NAME: ${CLOUDINARY_NAME}
+      CLOUDINARY_KEY: ${CLOUDINARY_KEY}
+      CLOUDINARY_SECRET: ${CLOUDINARY_SECRET}
       DATABASE_CLIENT: postgres
       DATABASE_NAME: strapi
       DATABASE_HOST: postgres
@@ -46,6 +48,9 @@ services:
     ports:
       - 3000:3000
     environment:
+      CLOUDINARY_NAME: ${CLOUDINARY_NAME}
+      CLOUDINARY_KEY: ${CLOUDINARY_KEY}
+      CLOUDINARY_SECRET: ${CLOUDINARY_SECRET}
       HOST: 0.0.0.0
       NUXT_HOST: 0.0.0.0
       NUXT_PORT: 3000
