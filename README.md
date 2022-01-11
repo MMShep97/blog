@@ -9,13 +9,21 @@ Click [here](https://marc-shepherd.netlify.app/) to navigate to the site!
 
 ## Running locally
 
-Prerequisites: Docker
+Prerequisites: [docker](https://www.docker.com), [cloudinary account](https://cloudinary.com/users/register/free) 
 
-Simply run `docker compose up -d` (or `docker-compose up -d` with docker compose v1). 
+1. Add a `.env` file to the `~/backend` folder containing secret information for cloudinary:
+```
+CLOUDINARY_NAME = 'name'
+CLOUDINARY_KEY = 'key'
+CLOUDINARY_SECRET = 'secret'
+```
+2. Run `docker compose up -d` (or `docker-compose up -d` with docker compose v1). 
 
 That should be it! Let docker run its course!
 
-Note: the nuxt url it says its running on will not work...
+### Additional Notes
+
+The nuxt url it says its running on will not work...
 
 Instead, navigate to either of the following: 
 

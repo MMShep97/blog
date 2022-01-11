@@ -1,5 +1,5 @@
 # FROM strapi/base
-FROM strapi/base:alpine
+FROM strapi/base:14-alpine
 
 WORKDIR /app
 
