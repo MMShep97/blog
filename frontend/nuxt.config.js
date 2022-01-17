@@ -46,6 +46,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/google-fonts'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -71,7 +72,7 @@ export default {
     }
   },
 
-  apollo: {  
+  apollo: {
     clientConfigs: {
       default: {
         httpEndpoint: (process.env.BACKEND_URL || localhost) + "/graphql"
@@ -95,6 +96,12 @@ export default {
   },
     vuetify: {
       optionsPath: './vuetify.options.js'
+  },
+  googleFonts: {
+    families: {
+      'Poppins': true,
+      'Courier+Prime': true,
+    }
   }
 }
 

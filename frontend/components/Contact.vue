@@ -20,38 +20,38 @@
                     <v-spacer />
                     <v-col cols="5" class="mr-10">
                             <v-form>
-                                <v-text-field 
+                                <v-text-field
                                     class="name form-input secondary--text rounded-t-xl" style="width: 70%" label="Name" placeholder="John Doe" filled
                                     :rules="[rules.required]">
                                     </v-text-field>
-                                <v-text-field 
-                                    class="email form-input rounded-t-xl" label="Email" style="width: 70%" placeholder="john.doe@gmail.com" filled 
+                                <v-text-field
+                                    class="email form-input rounded-t-xl" label="Email" style="width: 70%" placeholder="john.doe@gmail.com" filled
                                     v-model="email" :rules="[rules.required, rules.email]">
                                 </v-text-field>
                                 <!-- <v-text-field class="email form-input" label="Email" placeholder="john.doe@gmail.com" solo></v-text-field> --> <!-- could be good to customize -->
-                                
-                                <!-- <v-text-field 
+
+                                <!-- <v-text-field
                                 class="message form-input rounded-top-lg" height="150" label="Message" placeholder="Send me a message here!"
                                 filled rows="4"
                                 :rules="[rules.required]"
                                 >
                                 </v-text-field> -->
 
-                                <v-textarea class="message form-input rounded-t-xl" label="Message" placeholder="Send me a message here!" 
+                                <v-textarea class="message form-input rounded-t-xl" label="Message" placeholder="Send me a message here!"
                                 filled rows="5" row-height="25" shaped counter value="" :rules="[rules.required, rules.counter]">
                                 </v-textarea>
                             </v-form>
                             <v-row justify="center" class="mt-6">
                                 <div class="button-wrapper">
                                     <div class="button-shadow"></div>
-                                    <v-btn class="submit-button px-10 button" style="letter-spacing: 3px" color="primaryAccent" tile x-large>
+                                    <v-btn class="submit-button px-10" color="primaryAccent" tile x-large>
                                         <span>Submit</span>
                                     </v-btn>
                                 </div>
                             </v-row>
                     </v-col>
                 </v-row>
-    </v-container>    
+    </v-container>
 </template>
 
 <script>

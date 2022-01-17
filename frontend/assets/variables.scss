@@ -1,7 +1,18 @@
 // https://vuetifyjs.com/en/features/sass-variables/#example-variable-file
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 // vuetify overridden
-$body-font-family: 'Poppins', serif;
+// $body-font-family: 'Courier Prime', serif;
+
+// $font-family: 'Courier Prime';
+
+// .v-application {
+//   [class*='text-'] {
+//     font-family: $font-family, sans-serif !important;
+//   }
+//   font-family: $font-family, sans-serif !important;
+// }
 
 // custom
+
+// THIS IS REPLACED WITH @nuxt/google-fonts module

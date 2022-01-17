@@ -1,5 +1,5 @@
 <template>
-<v-container>
+<v-container class="index-container px-16">
     <introduction />
     <div class="my-16"/>
     <about />

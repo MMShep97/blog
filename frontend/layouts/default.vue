@@ -23,27 +23,19 @@ export default {
 <style>
 .v-application {
   background-color: var(--v-background-base) !important;
+  font-family: 'Courier Prime' !important;
 }
 
 .nav-number-color {
   color: #E63946;
 }
 
-.nav-logo-wrapper {
-  width: 100px;
-  height: 100%;
-}
-
-.nav-logo {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
 .primary-text-style {
+  font-family: 'Courier Prime' !important;
 }
 
 .secondary-text-style {
   font-family: 'Poppins' !important;
 }
+
 </style>

@@ -19,6 +19,12 @@ $ yarn generate
 
 Remember to generate a `.env` file locally for external services like Cloudinary, etc.
 
+## Documentation
+
+### Fonts
+
+This app uses a nuxt module for google fonts: `@nuxtjs/google-fonts`. Simply go into `nuxt.config.js` and look for the `googleFonts` block to add your own fonts from google fonts. From there, its a matter of personal preference, but I create a convenience class in the root layout file to reuse the style across the board.  
+
 ## Oh my, the issues I've faced
 
 Below, I'll keep a list of notes (fingers crossed I remember to add here) of issues I've faced and how I overcame them.
