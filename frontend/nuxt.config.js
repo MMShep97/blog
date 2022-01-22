@@ -95,7 +95,9 @@ export default {
     useComponent: true
   },
     vuetify: {
-      optionsPath: './vuetify.options.js'
+      optionsPath: './vuetify.options.js',
+      customVariables: ['./assets/variables.scss'],
+      treeShake: true
   },
   googleFonts: {
     families: {

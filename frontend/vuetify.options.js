@@ -49,7 +49,5 @@ export default function () {
                 }
             },
         },
-        customVariables: ['~/assets/variables.scss'],
-        treeShake: true
     }
 }
