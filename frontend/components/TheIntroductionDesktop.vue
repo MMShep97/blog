@@ -1,9 +1,9 @@
 <template>
-          <v-container :class="backgroundColor +  ' rounded-xl px-6 intro-container'">
+          <v-container :fluid="$vuetify.breakpoint.mobile ? true : false" :class="backgroundColor +  ' rounded-xl pl-6 px-sm-6 intro-container'">
           <!-- <v-row v-if="$vuetify.breakpoint.mobile">HI</v-row> -->
-          <v-row class="px-10 py-16" no-gutters>
-            <v-col xl="6" lg="6" md="12" sm="12" class="pr-xl-16 pr-sm-4">
-              <div :class="cardBackground +  ' ml-xl-12 ml-sm-0 px-6 py-4'" style="height: 100%">
+          <v-row class="px-lg-10 py-lg-16" no-gutters>
+            <v-col xl="6" lg="6" md="12" sm="12" xs="12" class="pr-xl-16 pr-sm-4 px-0">
+              <div :class="backgroundColor +  ' ml-xl-12 pl-6 pt-2 px-md-6 py-md-4'" style="height: 100%">
                   <div class="header-content">
                     <div class="side-line lightMediumAccent"></div>
                       <div class="secondary--text font-weight-light primary-text-style" :style="'font-size:' + smallFontSize + '; font-family: \'Poppins\' !important;'">Hi there, I'm</div>
@@ -25,7 +25,7 @@
                                     </div>
               </div>
             </v-col>
-            <v-col lg="3" class="py-0 pl-12 d-flex flex-column align-stretch">
+            <v-col v-if="$vuetify.breakpoint.lgAndUp" lg="3" md="12" sm="12" xs="12" class="py-0 pl-12 d-flex flex-column align-stretch">
               <div class="half-size-image mb-2" id="first-image-box">
                                                           <cld-image
                                     public-id="sheep_014977a895"
@@ -70,7 +70,7 @@
                         </cld-image> -->
               </div>
             </v-col>
-            <v-col lg="3" class="py-0 ml-mdAndDown-4 pl-xl-4">
+            <v-col v-if="$vuetify.breakpoint.lgAndUp" lg="3" class="py-0 ml-mdAndDown-4 pl-xl-4">
                 <div class="large-image-wrapper fill-height">
                   <cld-image public-id="madhu-shesharam-KQZZCVyEWVk-unsplash_e7pobu"
                      radius="75"
@@ -150,7 +150,7 @@ export default {
 
     smallFontSize() {
             switch (this.$vuetify.breakpoint.name) {
-        case 'xs': return "30px"
+        case 'xs': return "20px"
         case 'sm': return "30px"
         case 'md': return "30px"
         case 'lg': return "20px"
@@ -162,9 +162,9 @@ export default {
     console.log(this.$vuetify.breakpoint.width)
 
       switch (this.$vuetify.breakpoint.name) {
-        case 'xs': return "30px"
-        case 'sm': return "30px"
-        case 'md': return "50px"
+        case 'xs': return "25px"
+        case 'sm': return "50px"
+        case 'md': return "45px"
         case 'lg': return "30px"
         case 'xl': return "50px"
       }
@@ -173,8 +173,8 @@ export default {
   largeFontSize() {
           switch (this.$vuetify.breakpoint.name) {
         case 'xs': return "30px"
-        case 'sm': return "30px"
-        case 'md': return "70px"
+        case 'sm': return "70px"
+        case 'md': return "55px"
         case 'lg': return "40px"
         case 'xl': return "70px"
       }
@@ -184,8 +184,8 @@ export default {
   buttonSize() {
               switch (this.$vuetify.breakpoint.name) {
         case 'xs': return { 'large': true }
-        case 'sm': return { 'large': true }
-        case 'md': return { 'large': true }
+        case 'sm': return { 'x-large': true }
+        case 'md': return { 'x-large': true }
         case 'lg': return { 'large': true }
         case 'xl': return { 'x-large': true }
       }

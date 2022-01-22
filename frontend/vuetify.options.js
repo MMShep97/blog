@@ -9,7 +9,7 @@ export default function () {
           mobileBreakpoint: 'sm',
           scrollBarWidth: 24,
           thresholds: {
-            xs: 600,
+            xs: 728,
             sm: 960,
             md: 1384, // see: `variables.scss` take into consideration the width of the scrollbar, so breakpoint is truly 1360
             lg: 1928,
