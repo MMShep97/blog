@@ -46,7 +46,8 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/vuetify',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -56,7 +57,6 @@ export default {
     '@nuxtjs/apollo',
     '@nuxtjs/markdownit',
     '@nuxtjs/cloudinary',
-    '@nuxtjs/vuetify',
   ],
 
 

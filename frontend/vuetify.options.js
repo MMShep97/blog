@@ -6,13 +6,13 @@ import GitHub from '@/components/svg/GitHub'
 export default function () {
     return {
         breakpoint: {
-          mobileBreakpoint: 'md',
+          mobileBreakpoint: 'sm',
           scrollBarWidth: 24,
           thresholds: {
             xs: 600,
             sm: 960,
-            md: 1360,
-            lg: 1904,
+            md: 1384, // see: `variables.scss` take into consideration the width of the scrollbar, so breakpoint is truly 1360
+            lg: 1928,
           },
         },
         icons: {
