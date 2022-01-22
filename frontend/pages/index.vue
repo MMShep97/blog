@@ -1,11 +1,14 @@
 <template>
-<v-container class="index-container px-16">
-    <introduction />
-    <div class="my-16"/>
-    <about />
-        <div class="my-16"/>
-    <jobs />
-    <contact />
+<v-container fluid class="index-container px-lg-and-up-16 px-md-8">
+    <the-introduction-container id="introduction" />
+    <div class="vertical-spacer" />
+    <about id="about" />
+    <div class="vertical-spacer" />
+    <experience id="experience" />
+    <div class="vertical-spacer" />
+    <work id="work" />
+    <div class="vertical-spacer" />
+    <contact id="contact" />
 </v-container>
 </template>
 
@@ -38,5 +41,9 @@ export default {
 </style>
 
 <style>
+.vertical-spacer {
+  margin-top: 300px;
+  margin-bottom: 300px;
+}
 
 </style>

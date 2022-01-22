@@ -5,6 +5,16 @@ import GitHub from '@/components/svg/GitHub'
 
 export default function () {
     return {
+        breakpoint: {
+          mobileBreakpoint: 'md',
+          scrollBarWidth: 24,
+          thresholds: {
+            xs: 600,
+            sm: 960,
+            md: 1360,
+            lg: 1904,
+          },
+        },
         icons: {
             values: {
                 saffron: {

@@ -99,8 +99,8 @@ export default {
   },
   googleFonts: {
     families: {
-      'Poppins': true,
-      'Courier+Prime': true,
+      'Poppins': [100, 300, 400, 500, 700],
+      'Courier+Prime': [100, 300, 400, 500, 700],
     }
   }
 }

@@ -5,8 +5,8 @@
                                <span class="primaryAccent--text">1. </span>
                                 <span class="ml-2">About Me</span>
                                 <v-divider class=""></v-divider>
-                                                        
-                                                        
+
+
                                                         <!-- <hr style="height: 2px; background-color: white; width: 100px;" color="white"/> -->
                                                     </v-card-title>
                                                     <v-row>
@@ -18,7 +18,7 @@
                                                         </v-col>
                                                     </v-row>
                             </v-card>
-    </v-container>    
+    </v-container>
 </template>
 
 <script>
