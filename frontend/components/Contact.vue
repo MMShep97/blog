@@ -1,5 +1,7 @@
 <template>
-    <v-container fill-height class="pr-16">
+    <v-container
+    :fluid="$vuetify.breakpoint.lgAndDown ? true : false"
+    fill-height class="pr-lg-16">
             <v-row>
                 <v-col offset="1" cols="11" class="text-h5">
                     <span style="color: var(--v-primaryAccent-base)">4.</span>
@@ -7,10 +9,10 @@
                     <span class="divider" />
                 </v-col>
             </v-row>
-                <v-row class="content-container px-10 py-16 rounded-xl">
-                    <v-col cols="5">
-                            <div class="text-h1 font-weight-bold secondary-text-style" style="font-family: 'Poppins' !important">Get in Touch</div>
-                            <p class="font-weight-bold text-h4 secondary-text-style mt-16" style="font-family: 'Poppins' !important">
+                <v-row class="content-container px-2 px-sm-10 py-md-16 py-6 rounded-xl">
+                    <v-col cols="12" sm="6" md="6" lg="6" xl="5" class="py-lg-12 pt-12">
+                            <div :class="`${headerFontSize} font-weight-bold secondary-text-style`" style="font-family: 'Poppins' !important">Get in Touch</div>
+                            <p :class="`${subHeaderFontSize} font-weight-bold secondary-text-style mt-16`" style="font-family: 'Poppins' !important">
                                 <span class="secondary--text">Don't hesitate to reach out. My inbox is always open for</span>
                                 <span class="lightMediumAccent--text">anyone</span>
                                 <span class="secondary--text">to chat</span>
@@ -18,7 +20,7 @@
                             </p>
                     </v-col>
                     <v-spacer />
-                    <v-col cols="5" class="mr-10 secondary-text-style" style="font-family: 'Poppins' !important">
+                    <v-col cols="12" sm="5" class="mr-lg-10 secondary-text-style" style="font-family: 'Poppins' !important">
                             <v-form>
                                 <v-text-field
                                     class="name form-input secondary--text rounded-t-xl" style="width: 70%" label="Name" placeholder="John Doe" filled
@@ -38,7 +40,7 @@
                                 </v-text-field> -->
 
                                 <v-textarea class="message form-input rounded-t-xl" label="Message" placeholder="Send me a message here!"
-                                filled rows="5" row-height="25" shaped counter value="" :rules="[rules.required, rules.counter]">
+                                filled :rows="$vuetify.breakpoint.lgAndUp ? 5 : 3" row-height="25" shaped counter value="" :rules="[rules.required, rules.counter]">
                                 </v-textarea>
                             </v-form>
                             <v-row justify="center" class="mt-6">
@@ -70,6 +72,28 @@ export default {
         },
       }
     },
+
+    computed: {
+      headerFontSize() {
+          switch (this.$vuetify.breakpoint.name) {
+        case 'xs': return "text-h4"
+        case 'sm': return "text-h4"
+        case 'md': return "text-h3"
+        case 'lg': return "text-h2"
+        case 'xl': return "text-h1"
+      }
+      },
+
+      subHeaderFontSize() {
+                  switch (this.$vuetify.breakpoint.name) {
+        case 'xs': return "text-h5"
+        case 'sm': return "text-h5"
+        case 'md': return "text-h5"
+        case 'lg': return "text-h4"
+        case 'xl': return "text-h4"
+      }
+      }
+    }
 }
 </script>
 

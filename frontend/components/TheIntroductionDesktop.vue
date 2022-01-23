@@ -1,12 +1,14 @@
 <template>
-          <v-container :fluid="$vuetify.breakpoint.mobile ? true : false" :class="backgroundColor +  ' rounded-xl pl-6 px-sm-6 intro-container'">
+          <v-container
+          :fluid="$vuetify.breakpoint.mobile ? true : false"
+          :class="backgroundColor + ' ' + `elevation-${$vuetify.breakpoint.lgAndUp ? '12' : '0'}` + ' rounded-xl pl-6 px-sm-6 intro-container'">
           <!-- <v-row v-if="$vuetify.breakpoint.mobile">HI</v-row> -->
           <v-row class="px-lg-10 py-lg-16" no-gutters>
             <v-col xl="6" lg="6" md="12" sm="12" xs="12" class="pr-xl-16 pr-sm-4 px-0">
               <div :class="backgroundColor +  ' ml-xl-12 pl-6 pt-2 px-md-6 py-md-4'" style="height: 100%">
                   <div class="header-content">
                     <div class="side-line lightMediumAccent"></div>
-                      <div class="secondary--text font-weight-light primary-text-style" :style="'font-size:' + smallFontSize + '; font-family: \'Poppins\' !important;'">Hi there, I'm</div>
+                      <div class="secondary--text font-weight-light primary-text-style" :style="'font-size:' + smallFontSize + '; font-family: \'Poppins\' !important;'">Hey there, I'm</div>
                       <div class="name primary--text font-weight-bold py-1 primary-text-style" :style="'font-size:' + largeFontSize + '; font-family: \'Poppins\' !important;'">Marc Shepherd,</div>
                       <div class="secondary--text font-weight-light primary-text-style" :style="'font-size:' + mediumFontSize + '; font-family: \'Poppins\' !important;'">a Software Engineer!</div>
                   </div>

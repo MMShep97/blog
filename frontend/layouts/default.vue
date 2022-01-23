@@ -1,7 +1,7 @@
 <template>
     <v-app dark color="background">
-        <the-navbar />
-        <the-contact-info />
+        <the-navbar id="navbar"/>
+        <the-contact-info id="contact-info"/>
         <v-container fluid>
           <v-main>
             <nuxt />
@@ -12,18 +12,32 @@
 
 <script>
 export default {
+  data() {
+    return {
+
+    }
+  }
 }
 
 </script>
 
 <style>
-.v-application {
+/* div[data-app='true'] {
+  background: url('../assets/images/circuit-board.svg') center center fixed !important;
+  background-size: contain !important;
   background-color: var(--v-background-base) !important;
-  font-family: 'Courier Prime' !important;
 }
 
-.nav-number-color {
-  color: #E63946;
+.v-app-bar, .v-navigation-drawer {
+    background: url('../assets/images/circuit-board.svg') center center !important;
+  background-size: cover !important;
+  background-color: var(--v-background-base) !important;
+
+} */
+
+.v-application {
+  background-color: var(--v-background-base) !important;
+  font-family: 'Poppins' !important;
 }
 
 .primary-text-style {
