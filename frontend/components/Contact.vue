@@ -1,6 +1,6 @@
 <template>
     <v-container
-    :fluid="$vuetify.breakpoint.lgAndDown ? true : false"
+    :fluid="$vuetify.breakpoint.mdAndDown ? true : false"
     fill-height class="pr-lg-16">
             <v-row>
                 <v-col offset="1" cols="11" class="text-h5">
@@ -21,13 +21,13 @@
                     </v-col>
                     <v-spacer />
                     <v-col cols="12" sm="5" class="mr-lg-10 secondary-text-style" style="font-family: 'Poppins' !important">
-                            <v-form>
+                            <v-form ref="form" v-model="valid" lazy-validation>
                                 <v-text-field
-                                    class="name form-input secondary--text rounded-t-xl" style="width: 70%" label="Name" placeholder="John Doe" filled
+                                    class="name form-input secondary--text rounded-t-xl" style="width: 70%" label="Name" placeholder="John Doe" filled required
                                     :rules="[rules.required]">
                                     </v-text-field>
                                 <v-text-field
-                                    class="email form-input rounded-t-xl" label="Email" style="width: 70%" placeholder="john.doe@gmail.com" filled
+                                    class="email form-input rounded-t-xl" label="Email" style="width: 70%" placeholder="john.doe@gmail.com" filled required
                                     v-model="email" :rules="[rules.required, rules.email]">
                                 </v-text-field>
                                 <!-- <v-text-field class="email form-input" label="Email" placeholder="john.doe@gmail.com" solo></v-text-field> --> <!-- could be good to customize -->
@@ -40,23 +40,26 @@
                                 </v-text-field> -->
 
                                 <v-textarea class="message form-input rounded-t-xl" label="Message" placeholder="Send me a message here!"
-                                filled :rows="$vuetify.breakpoint.lgAndUp ? 5 : 3" row-height="25" shaped counter value="" :rules="[rules.required, rules.counter]">
+                                filled :rows="$vuetify.breakpoint.lgAndUp ? 5 : 3" row-height="25" shaped counter value="" :rules="[rules.required, rules.counter]" required>
                                 </v-textarea>
-                            </v-form>
-                            <v-row justify="center" class="mt-6">
+                                <v-row justify="center" class="mt-6">
                                 <div class="button-wrapper">
                                     <div class="button-shadow"></div>
-                                    <v-btn class="submit-button px-10" style="text-transform: unset !important;" color="primaryAccent" tile x-large>
+                                    <v-btn :disabled="!valid" @click="sendEmail" 
+                                            class="submit-button px-10" style="text-transform: unset !important;" color="primaryAccent" tile x-large>
                                         <span>Submit</span>
                                     </v-btn>
                                 </div>
                             </v-row>
+                            </v-form>
                     </v-col>
                 </v-row>
     </v-container>
 </template>
 
 <script>
+// import emailjs from '@emailjs/browser';
+
 export default {
         data () {
       return {
@@ -70,8 +73,22 @@ export default {
             return pattern.test(value) || 'Please enter a valid email.'
           },
         },
+        completedForms: false,
+        valid: true,
       }
     },
+
+    methods: {
+    sendEmail() {
+                this.$refs.form.validate()
+    //   emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this.$refs.form, 'YOUR_USER_ID')
+    //     .then((result) => {
+    //         console.log('SUCCESS!', result.text);
+    //     }, (error) => {
+    //         console.log('FAILED...', error.text);
+    //     });
+    }
+  },
 
     computed: {
       headerFontSize() {
