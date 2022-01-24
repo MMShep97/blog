@@ -1,6 +1,9 @@
 const localhost = "http://localhost:1337"
 
 export default {
+  publicRuntimeConfig: {
+    emailJsUserId: process.env.EMAILJS_USER_ID
+  },
   env: {
     strapiBaseUri: process.env.BACKEND_URL || localhost
   },

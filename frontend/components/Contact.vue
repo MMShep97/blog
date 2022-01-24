@@ -23,12 +23,18 @@
                     <v-col cols="12" sm="5" class="mr-lg-10 secondary-text-style" style="font-family: 'Poppins' !important">
                             <v-form ref="form" v-model="valid" lazy-validation>
                                 <v-text-field
+                                    v-model="name"
+                                    color="lightMediumAccent"
+                                    name="name"
                                     class="name form-input secondary--text rounded-t-xl" style="width: 70%" label="Name" placeholder="John Doe" filled required
                                     :rules="[rules.required]">
                                     </v-text-field>
                                 <v-text-field
+                                    v-model="fromEmail"
+                                    color="lightMediumAccent"
+                                    name="from_email"
                                     class="email form-input rounded-t-xl" label="Email" style="width: 70%" placeholder="john.doe@gmail.com" filled required
-                                    v-model="email" :rules="[rules.required, rules.email]">
+                                    :rules="[rules.required, rules.email]">
                                 </v-text-field>
                                 <!-- <v-text-field class="email form-input" label="Email" placeholder="john.doe@gmail.com" solo></v-text-field> --> <!-- could be good to customize -->
 
@@ -39,7 +45,11 @@
                                 >
                                 </v-text-field> -->
 
-                                <v-textarea class="message form-input rounded-t-xl" label="Message" placeholder="Send me a message here!"
+                                <v-textarea
+                                v-model="message"
+                                color="lightMediumAccent"
+                                name="message"
+                                class="message form-input rounded-t-xl" label="Message" placeholder="Send me a message here!"
                                 filled :rows="$vuetify.breakpoint.lgAndUp ? 5 : 3" row-height="25" shaped counter value="" :rules="[rules.required, rules.counter]" required>
                                 </v-textarea>
                                 <v-row justify="center" class="mt-6">
@@ -58,13 +68,12 @@
 </template>
 
 <script>
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 
 export default {
         data () {
       return {
         title: 'Preliminary report',
-        email: '',
         rules: {
           required: value => !!value || 'Required.',
           counter: value => value.length <= 1000 || 'Max 1000 characters',
@@ -75,18 +84,36 @@ export default {
         },
         completedForms: false,
         valid: true,
+        name: "",
+        fromEmail: "",
+        message: "",
+        emailJsUserId: this.$config.emailJsUserId
       }
     },
 
     methods: {
     sendEmail() {
-                this.$refs.form.validate()
-    //   emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this.$refs.form, 'YOUR_USER_ID')
-    //     .then((result) => {
-    //         console.log('SUCCESS!', result.text);
-    //     }, (error) => {
-    //         console.log('FAILED...', error.text);
-    //     });
+      let isValid = this.$refs.form.validate()
+      console.log(this.emailJsUserId)
+      if (!isValid) return 
+
+      var templateParams = {
+        name: this.name,
+        from_email: this.fromEmail,
+        message: this.message
+      }
+
+      emailjs.send('dev_email', 'personal_site_template', templateParams, this.emailJsUserId)
+        .then((result) => {
+            console.log('SUCCESS!', result.text);
+        }, (error) => {
+            console.log('FAILED...', error.text);
+        });
+
+              // Reset form field
+      this.name = ''
+      this.fromEmail = ''
+      this.message = ''
     }
   },
 
@@ -127,6 +154,16 @@ export default {
     opacity: 1 !important;
     color: var(--v-primary-base) !important;
     font-weight: bold !important;
+}
+
+::v-deep .v-text-field__slot > input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 30px var(--v-secondary-base) inset !important;
 }
 
 .submit-button {
