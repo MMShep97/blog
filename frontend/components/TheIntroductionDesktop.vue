@@ -21,6 +21,7 @@
                                             <span
                                             class="secondary-text-style font-weight-thin"
                                             :style="'font-size:' + smallFontSize + '; font-family: \'Poppins\' !important;'"
+                                            @click="$vuetify.goTo('#contact', goToOptions)"
                                             >Get in touch
                                             </span>
                                         </v-btn>
@@ -126,6 +127,11 @@ export default {
 
   data() {
     return {
+                  goToOptions: {
+              duration: 1200,
+              offset: 0,
+              easing: 'easeInOutCubic',
+            },
     }
   },
 

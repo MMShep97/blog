@@ -60,6 +60,20 @@
                                         <span>Submit</span>
                                     </v-btn>
                                 </div>
+                                <v-snackbar v-model="snackbar" timeout="5000" shaped :color="emailSentSuccessfully ? 'green' : 'red'">
+                                    <span v-show="emailSentSuccessfully">Email sent successfully!</span>
+                                    <span v-show="!emailSentSuccessfully">Email failed to send - my free service is probably over the monthly limit! =(</span>
+                                    <template v-slot:action="{ attrs }">
+                                        <v-btn
+                                        color="lightMediumAccent"
+                                        text
+                                        v-bind="attrs"
+                                        @click="snackbar = false"
+                                        >
+                                        Close
+                                        </v-btn>
+                                    </template>
+                                </v-snackbar>
                             </v-row>
                             </v-form>
                     </v-col>
@@ -87,15 +101,16 @@ export default {
         name: "",
         fromEmail: "",
         message: "",
-        emailJsUserId: this.$config.emailJsUserId
+        emailJsUserId: this.$config.emailJsUserId,
+        snackbar: false,
+        emailSentSuccessfully: false
       }
     },
 
     methods: {
     sendEmail() {
       let isValid = this.$refs.form.validate()
-      console.log(this.emailJsUserId)
-      if (!isValid) return 
+      if (!isValid) return
 
       var templateParams = {
         name: this.name,
@@ -105,15 +120,22 @@ export default {
 
       emailjs.send('dev_email', 'personal_site_template', templateParams, this.emailJsUserId)
         .then((result) => {
-            console.log('SUCCESS!', result.text);
+            this.emailSentSuccessfully = true
+            this.snackbar = true
+
+            console.log('SUCCESS!', result.text)
         }, (error) => {
-            console.log('FAILED...', error.text);
+            this.emailSentSuccessfully = false
+            this.snackbar = true
+
+            console.log('FAILED...', error.text)
         });
 
               // Reset form field
       this.name = ''
       this.fromEmail = ''
       this.message = ''
+      this.$refs.form.resetValidation()
     }
   },
 
