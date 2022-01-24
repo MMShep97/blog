@@ -1,70 +1,51 @@
 <template>
-  <div>
-    <nav class="uk-navbar-container uk-light" uk-navbar>
-        <div class="uk-navbar-left">
-          <ul class="uk-navbar-nav">
-              <li><a href="#modal-full" uk-toggle><span uk-icon="icon: table"></span></a></li>
-              <li>
-                <NuxtLink to="/">Home</NuxtLink>
-              </li>
-          </ul>
-
-        </div>
-
-        <div class="uk-navbar-right">
-          <ul class="uk-navbar-nav">
-              <li v-for="category in categories" v-bind:key="category.id">
-                <NuxtLink :to="{ name: 'categories-id', params: { id: category.id }}" tag="a">{{ category.name }}</NuxtLink>
-              </li>
-          </ul>
-        </div>
-    </nav>
-
-    <div id="modal-full" class="uk-modal-full" uk-modal>
-        <div class="uk-modal-dialog">
-            <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
-            <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
-                <div class="uk-background-cover" style="background-image: url('https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3308&q=80 3308w');" uk-height-viewport></div>
-                <div class="uk-padding-large">
-                    <h1 style="font-family: Staatliches;">All Things Me</h1>
-                    <div class="uk-width-1-2@s">
-                        <ul class="uk-nav-primary uk-nav-parent-icon" uk-nav>
-                          <li v-for="category in categories" v-bind:key="category.id">
-                            <NuxtLink class="uk-modal-close" :to="{ name: 'categories-id', params: { id: category.id }}" tag="a">{{ category.name }}</NuxtLink>
-                          </li>
-                        </ul>
-                    </div>
-                    <!-- <p class="uk-text-light"></p> -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <nuxt />
-  </div>
+    <v-app dark color="background">
+        <the-navbar id="navbar"/>
+        <the-contact-info id="contact-info"/>
+        <v-container fluid>
+          <v-main>
+            <nuxt />
+          </v-main>
+        </v-container>
+    </v-app>
 </template>
 
 <script>
-import categoriesQuery from '~/apollo/queries/category/categories'
-
 export default {
   data() {
     return {
-      categories: [],
-    }
-  },
-  apollo: {
-    categories: {
-      prefetch: true,
-      query: categoriesQuery
+
     }
   }
 }
 
 </script>
 
-<style scoped>
-  .uk-navbar-container {
-    background-color: rgb(20, 17, 17) !important;
-  }
+<style>
+/* div[data-app='true'] {
+  background: url('../assets/images/circuit-board.svg') center center fixed !important;
+  background-size: contain !important;
+  background-color: var(--v-background-base) !important;
+}
+
+.v-app-bar, .v-navigation-drawer {
+    background: url('../assets/images/circuit-board.svg') center center !important;
+  background-size: cover !important;
+  background-color: var(--v-background-base) !important;
+
+} */
+
+.v-application {
+  background-color: var(--v-background-base) !important;
+  font-family: 'Poppins' !important;
+}
+
+.primary-text-style {
+  font-family: 'Courier Prime' !important;
+}
+
+.secondary-text-style {
+  font-family: 'Poppins' !important;
+}
+
 </style>

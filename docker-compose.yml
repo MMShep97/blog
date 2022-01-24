@@ -1,0 +1,70 @@
+version: "3"
+
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    restart: unless-stopped
+    environment:
+      CLOUDINARY_NAME: ${CLOUDINARY_NAME}
+      CLOUDINARY_KEY: ${CLOUDINARY_KEY}
+      CLOUDINARY_SECRET: ${CLOUDINARY_SECRET}
+      DATABASE_CLIENT: postgres
+      DATABASE_NAME: strapi
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
+    networks:
+      - strapi-app-network
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    ports:
+      - "1337:1337"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    container_name: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+    networks:
+      - strapi-app-network
+    volumes:
+      - strapidata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    networks:
+      - strapi-app-network
+    ports:
+      - 3000:3000
+    environment:
+      CLOUDINARY_NAME: ${CLOUDINARY_NAME}
+      CLOUDINARY_KEY: ${CLOUDINARY_KEY}
+      CLOUDINARY_SECRET: ${CLOUDINARY_SECRET}
+      EMAILJS_USER_ID: ${EMAILJS_USER_ID}
+      HOST: 0.0.0.0
+      NUXT_HOST: 0.0.0.0
+      NUXT_PORT: 3000
+      BACKEND_URL: http://host.docker.internal:1337
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.nuxt
+    restart: unless-stopped
+
+networks:
+  strapi-app-network:
+    driver: bridge
+
+volumes:
+  strapidata:

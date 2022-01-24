@@ -1,8 +1,12 @@
 <template>
   <div>
 
-      <div v-if="article.image" id="banner" class="uk-height-small uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding" :data-src="article.image.url" uk-img>
-        <h1>{{ article.title }}</h1>
+      <div v-if="article.image" 
+      id="banner" 
+      class="uk-height-small uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding" 
+      :data-src="article.image.url" 
+      uk-img>
+        <h1 class="article-title-header">{{ article.title }}</h1>
       </div>
 
       <div class="uk-section">
@@ -42,5 +46,17 @@ export default {
 <style scoped> 
   #banner {
     text-align: center;
+  }
+
+  .article-title-header {
+    text-shadow:
+        0.01em 0 black,
+        0 0.01em black,
+        -0.01em 0 black,
+        0 -0.01em black,
+        -0.01em -0.01em black,
+        -0.01em 0.01em black,
+        0.01em -0.01em black,
+        0.01em 0.01em black;
   }
 </style>

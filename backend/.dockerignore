@@ -1,0 +1,3 @@
+# Let docker ignore the local files you might have so it can use its own
+node_modules
+npm-debug.log

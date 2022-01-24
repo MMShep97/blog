@@ -1,6 +1,9 @@
 const localhost = "http://localhost:1337"
 
 export default {
+  publicRuntimeConfig: {
+    emailJsUserId: process.env.EMAILJS_USER_ID
+  },
   env: {
     strapiBaseUri: process.env.BACKEND_URL || localhost
   },
@@ -46,6 +49,8 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/vuetify',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -62,7 +67,15 @@ export default {
   build: {
   },
 
-  apollo: {  
+  // enable HMR so it will work in docker
+  watchers: {
+    webpack: {
+      aggregateTimeout: 300,
+      poll: 1000,
+    }
+  },
+
+  apollo: {
     clientConfigs: {
       default: {
         httpEndpoint: (process.env.BACKEND_URL || localhost) + "/graphql"
@@ -83,5 +96,17 @@ export default {
     apiKey: process.env.CLOUDINARY_KEY,
     apiSecret: process.env.CLOUDINARY_SECRET,
     useComponent: true
+  },
+    vuetify: {
+      optionsPath: './vuetify.options.js',
+      customVariables: ['./assets/variables.scss'],
+      treeShake: true
+  },
+  googleFonts: {
+    families: {
+      'Poppins': [100, 300, 400, 500, 700],
+      'Courier+Prime': [100, 300, 400, 500, 700],
+    }
   }
 }
+
