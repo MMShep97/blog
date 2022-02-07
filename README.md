@@ -20,7 +20,7 @@
 
 Collecting my thoughts... sharing what I learn in my career
 
-Click [here](https://marc-shepherd.netlify.app/) to navigate to the site!
+Click [here](https://mshepherd.dev) to navigate to the site!
 
 
 ## Running locally
