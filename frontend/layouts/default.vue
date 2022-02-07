@@ -1,5 +1,5 @@
 <template>
-    <v-app dark color="background">
+    <v-app v-show="loaded" dark color="background">
         <the-navbar id="navbar"/>
         <the-contact-info id="contact-info"/>
         <v-container fluid>
@@ -14,14 +14,19 @@
 export default {
   data() {
     return {
-
+      loaded: false,
     }
+  },
+
+  mounted() {
+    this.loaded = true
   }
 }
 
 </script>
 
 <style>
+
 /* div[data-app='true'] {
   background: url('../assets/images/circuit-board.svg') center center fixed !important;
   background-size: contain !important;
