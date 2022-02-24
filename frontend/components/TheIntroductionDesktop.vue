@@ -31,7 +31,7 @@
             <v-col v-if="$vuetify.breakpoint.lgAndUp" lg="3" md="12" sm="12" xs="12" class="py-0 pl-12 d-flex flex-column align-stretch">
               <div class="half-size-image mb-2" id="first-image-box">
                                                           <cld-image
-                                    public-id="sheep_014977a895"
+                                    public-id="blog/bryce-canyon-sunrise"
                                     quality="auto"
                                     loading="lazy"
                                     dpr="auto"
@@ -51,7 +51,7 @@
               </div>
               <div class="half-size-image mt-2">
                                     <cld-image
-                                    public-id="sheep_014977a895"
+                                    public-id="blog/saffron-photoshoot"
                                     quality="auto"
                                     loading="lazy"
                                     dpr="auto"
@@ -66,7 +66,7 @@
                                     width="auto"
                                     responsive="width" -->
 
-                        <!-- <cld-image public-id="sheep_014977a895" responsive="width" width="auto" dpr="auto">
+                        <!-- <cld-image public-id="blog/shepherd-fam" responsive="width" width="auto" dpr="auto">
                             <cld-transformation radius="25" crop="scale" fetchFormat="auto"></cld-transformation>
                             <cld-transformation quality="auto" loading="lazy"></cld-transformation>
                             <cld-placeholder type="blur" />
