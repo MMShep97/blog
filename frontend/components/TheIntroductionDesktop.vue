@@ -75,7 +75,7 @@
             </v-col>
             <v-col v-if="$vuetify.breakpoint.lgAndUp" lg="3" class="py-0 ml-mdAndDown-4 pl-xl-4">
                 <div class="large-image-wrapper fill-height">
-                  <cld-image public-id="madhu-shesharam-KQZZCVyEWVk-unsplash_e7pobu"
+                  <cld-image public-id="blog/shepherd-fam"
                      radius="75"
                      :aspect-ratio="largeImageAspectRatio"
                       crop="fill"
